@@ -26,6 +26,7 @@ jobs:
           echo "::set-output name=diff::$OUTPUT"
 
       - name: Comment Code Lines
+        continue-on-error: true
         uses: marocchino/sticky-pull-request-comment@v2
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
