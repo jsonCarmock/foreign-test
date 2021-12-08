@@ -76,10 +76,10 @@ jobs:
           export REF_NAME=new
           BENCH_COUNT=5 make bench-run bench-stat
           OUTPUT=$(make bench-stat)
+          echo "${OUTPUT}"
           OUTPUT="${OUTPUT//'%'/'%25'}"
           OUTPUT="${OUTPUT//$'\n'/'%0A'}"
           OUTPUT="${OUTPUT//$'\r'/'%0D'}"
-          echo "${OUTPUT}"
           echo "::set-output name=result::$OUTPUT"
       - name: Comment Benchmark Result
         continue-on-error: true
