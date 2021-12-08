@@ -71,8 +71,8 @@ jobs:
         if: ${{ github.ref == 'refs/heads/master' || github.ref == 'refs/heads/main' }}
         run: cp unit.txt unit-base.txt
       - name: Comment Test Coverage
-        if: matrix.go-version == '1.17.x'
         continue-on-error: true
+        if: matrix.go-version == '1.17.x'
         uses: marocchino/sticky-pull-request-comment@v2
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
